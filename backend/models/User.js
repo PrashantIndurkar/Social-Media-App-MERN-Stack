@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema({
 	},
   avatar:{
     public_id:String,
-    url:String
   }
 	password: {
 		type: String,

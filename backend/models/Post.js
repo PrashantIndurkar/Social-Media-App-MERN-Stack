@@ -7,10 +7,12 @@ const postSchema = new mongoose.Schema({
 		public_id: String,
 		url: String,
 	},
+
 	owner: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "User",
 	},
+
 	createdAt: {
 		type: Date,
 		default: Date.now,
@@ -22,14 +24,16 @@ const postSchema = new mongoose.Schema({
 		},
 	],
 
-	Comments: [
+	comments: [
 		{
 			user: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "User",
 			},
-			comment: String,
-			required: true,
+			comment: {
+				type: String,
+				required: true,
+			},
 		},
 	],
 });
